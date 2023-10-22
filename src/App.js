@@ -10,15 +10,9 @@ function App() {
     } catch (e) {}
 
     return Array.isArray(todoList) ? todoList : [];
-  });
+  }); //При перезагрузке возвращает сохранненый список
 
-  useEffect(() => {
-    const savedTodoList = localStorage.getItem("todo");
-    if (savedTodoList) {
-      setTodoList(JSON.parse(savedTodoList));
-    }
-  }, []);
-
+  //Сохранение списка
   useEffect(() => {
     localStorage.setItem("todo", JSON.stringify(todoList));
   }, [todoList]);
