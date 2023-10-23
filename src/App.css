@@ -1,1 +1,28 @@
-    
+.wrapperTodo {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.wrapperTodoTask {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  box-shadow: 1px 1px 4px 0px;
+  border-radius: 7px;
+}
+
+.todoTask {
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  border-radius: 50%;
+}
+
+.deleteBtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+}

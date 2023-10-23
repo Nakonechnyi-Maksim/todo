@@ -29,21 +29,38 @@ function App() {
     setTask("");
   }
 
+  function deleteTodo(e) {
+    console.log(e.target.value);
+  }
+
   return (
     <div className="App">
-      <form onSubmit={handleClick}>
-        <input
-          name="task"
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-        />
-        <button type="submit">Создать</button>
-      </form>
-      <div className="wrapper">
+      <div className="createTodo">
+        <form onSubmit={handleClick}>
+          <input
+            name="task"
+            type="text"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+          />
+          <button type="submit">Создать</button>
+        </form>
+      </div>
+      <div className="wrapperTodo">
         {todoList.map((item) => (
-          <div>
-            <p>{item.todo}</p>
+          <div className="wrapperTodoTask">
+            <div className="todoTask">
+              <p>{item.todo}</p>
+              <button className="deleteBtn" value={item} onClick={deleteTodo}>
+                <svg width="24" height="24">
+                  <path
+                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5-1-1h-5l-1 1H5v2h14V4z"
+                    stroke="black"
+                    stroke-width="0.1"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         ))}
       </div>
